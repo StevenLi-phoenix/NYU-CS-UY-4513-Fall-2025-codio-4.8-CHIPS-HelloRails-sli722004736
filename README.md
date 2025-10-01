@@ -1,24 +1,36 @@
-# README
+# Hello Rails Movies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails application is the "Hello Rails" starter used in CHIPS. It exposes a basic CRUD interface for movies so you can practice working with controllers, views, and the Active Record ORM.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- Ruby 3.3.8 (match the version pinned in `Gemfile`)
+- Bundler (`gem install bundler` if you don't already have it)
+- SQLite 3 (for the development and test databases)
 
-* System dependencies
+## Getting Started
 
-* Configuration
+1. Install gems: `bundle install`
+2. Set up the database (creates, migrates, and seeds): `bin/rails db:setup`
+3. Start the server: `bin/rails server`
+4. Visit `http://localhost:3000/movies` to browse, create, update, or delete movie records.
 
-* Database creation
+If you change your schema later, rerun `bin/rails db:migrate`. To reseed demo data, use `bin/rails db:seed`.
 
-* Database initialization
+## Running the Test Suite
 
-* How to run the test suite
+Execute `bin/rails test` to run the Rails test suite. Add feature or model tests as you build out more functionality.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Project Structure Highlights
 
-* Deployment instructions
+- `app/controllers/movies_controller.rb` implements the RESTful actions for movies.
+- `app/views/movies/` contains the ERB templates for the CRUD UI.
+- `db/seeds.rb` loads sample movie data inspired by RottenPotatoes.
 
-* ...
+## Useful Commands
+
+- `bin/rails console` launches an interactive console backed by the Rails environment.
+- `bin/rails routes` lists the available routes; the scaffold defines the standard REST paths for movies.
+- `bin/dev` runs the dev server with concurrent Rails and JS processes (if you have foreman installed).
+
+Refer to the official [Rails Guides](https://guides.rubyonrails.org/) for deeper explanations of the framework components used here.
